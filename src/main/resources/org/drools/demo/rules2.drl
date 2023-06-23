@@ -1,0 +1,13 @@
+package org.drools.demo;
+
+unit RequestUnit;
+
+rule "DT2r1"
+when
+    $r: /requests[type == "type2"]
+then
+    modify( $r ) { 
+        setApproved(false),
+        setComment("from a rule in rules2.drl")
+    };
+end
